@@ -21,12 +21,12 @@ app.use("/api/seller", sellerRoutes);
 app.use("/api/buyer", buyerRoutes);
 app.use("/api/tour", tourRoutes);
 
-// CODE TO SEE ALL THE RECORDS FROM THE DATABASE
+//CODE TO SEE ALL THE RECORDS FROM THE DATABASE
 // find();
 // async function find() {
 //   try {
 //     await connectDB();
-//     const res = await Buyer.find();
+//     const res = await Buyer.find({ email: "sami@gmail.com" });
 //     console.log(res);
 //   } catch (err) {
 //     console.log(err.message);
