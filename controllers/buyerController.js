@@ -70,3 +70,15 @@ exports.SignUp = async (req, res) => {
     console.log(err.message);
   }
 };
+
+// Getting info of Buyer from Primary Key (email address)
+exports.getBuyerByEmail = async (req, res) => {
+  try {
+    connectDB();
+    const buyer = await Buyer.findOne({ email: req.body.email }).exec();
+    console.log(buyer);
+    res.status(200).json(buyer);
+  } catch (err) {
+    console.log(err.message);
+  }
+};

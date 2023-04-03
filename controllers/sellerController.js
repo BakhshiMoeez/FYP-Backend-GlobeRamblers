@@ -3,6 +3,17 @@ const bcrypt = require("bcrypt");
 const connectDB = require("../helperFiles/DBconnection");
 const Seller = require("../models/sellerSchema");
 
+exports.getSellerByEmail = async (req, res) => {
+  try {
+    connectDB();
+    const seller = await Seller.findOne({ email: req.body.email }).exec();
+    console.log(seller);
+    res.status(200).json(seller);
+  } catch (err) {
+    console.log(err.message);
+  }
+};
+
 exports.Login = async (req, res) => {
   console.log(`${req.body.email} ${req.body.password}`);
   try {

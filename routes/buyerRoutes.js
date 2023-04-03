@@ -5,6 +5,12 @@ const multer = require("multer");
 
 const upload = multer({ storage: multer.memoryStorage() });
 
+router
+  .route("/")
+  .post(buyerController.getBuyerByEmail)
+  .get((req, res) => {
+    res.send("Hello from buyer");
+  });
 router.route("/login").post(buyerController.Login);
 router
   .route("/signup")
