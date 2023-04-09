@@ -24,6 +24,12 @@ const buyerSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  phone: {
+    type: String,
+  },
+  address: {
+    type: String,
+  },
 });
 
 module.exports = mongoose.model("Buyer", buyerSchema);

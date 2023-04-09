@@ -5,8 +5,13 @@ const sellerController = require("../controllers/sellerController");
 
 const upload = multer({ storage: multer.memoryStorage() });
 
-router.route("/").post(sellerController.getSellerByEmail);
+router
+  .route("/")
+  .post(sellerController.getSellerByEmail)
+  .put(sellerController.updateProfilePic);
+
 router.route("/login").post(sellerController.Login);
+
 router
   .route("/signup")
   .post(upload.single("profilePic"), sellerController.SignUp);

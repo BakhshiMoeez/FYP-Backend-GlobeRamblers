@@ -8,10 +8,11 @@ const upload = multer({ storage: multer.memoryStorage() });
 router
   .route("/")
   .post(buyerController.getBuyerByEmail)
-  .get((req, res) => {
-    res.send("Hello from buyer");
-  });
+  .put(buyerController.updateBuyerProfilePic)
+  .patch(buyerController.updateProfileInfo);
+
 router.route("/login").post(buyerController.Login);
+
 router
   .route("/signup")
   .post(upload.single("profilePic"), buyerController.SignUp);
