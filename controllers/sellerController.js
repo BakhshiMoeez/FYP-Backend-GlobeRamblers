@@ -91,6 +91,7 @@ exports.updateProfilePic = async (req, res) => {
     console.log(err.message);
   }
 };
+
 // exports.SignUp = async (req, res) => {
 //   console.log(
 //     `${req.body.email} ${req.body.password} ${req.body.fname} ${req.body.lname}`
