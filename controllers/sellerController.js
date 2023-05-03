@@ -1,4 +1,4 @@
-const cloudinary = require("../helperFiles/cloudinaryConfig");
+//const cloudinary = require("../helperFiles/cloudinaryConfig");
 const bcrypt = require("bcrypt");
 const connectDB = require("../helperFiles/DBconnection");
 const Seller = require("../models/sellerSchema");
