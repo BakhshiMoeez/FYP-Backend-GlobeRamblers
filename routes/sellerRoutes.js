@@ -8,7 +8,8 @@ const upload = multer({ storage: multer.memoryStorage() });
 router
   .route("/")
   .post(sellerController.getSellerByEmail)
-  .put(sellerController.updateProfilePic);
+  .put(sellerController.updateProfilePic)
+  .patch(sellerController.updateSellerProfileInfo);
 
 router.route("/login").post(sellerController.Login);
 

@@ -6,7 +6,27 @@ const bcrypt = require("bcrypt");
 const defaultImage =
   "https://res.cloudinary.com/dij2y1ngq/image/upload/v1680706018/api_images/avatar_w7tmvt.jpg";
 
-exports.updateProfileInfo = (req, res) => {};
+exports.updateProfileInfo = async (req, res) => {
+  //console.log(req.body);
+  try {
+    const filter = { email: req.body.email };
+    const update = {
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      address: req.body.address,
+      phone: req.body.phone,
+    };
+    const options = { new: true };
+
+    const updatedBuyer = await Buyer.findOneAndUpdate(filter, update, options);
+
+    console.log(updatedBuyer);
+
+    res.status(201).send(updatedBuyer);
+  } catch (err) {
+    console.error(err);
+  }
+};
 
 // Login controller for Buyer
 exports.Login = async (req, res) => {

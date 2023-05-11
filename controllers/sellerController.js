@@ -6,6 +6,30 @@ const Seller = require("../models/sellerSchema");
 const defaultImage =
   "https://res.cloudinary.com/dij2y1ngq/image/upload/v1680706018/api_images/avatar_w7tmvt.jpg";
 
+exports.updateSellerProfileInfo = async (req, res) => {
+  try {
+    const filter = { email: req.body.email };
+    const update = {
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      address: req.body.address,
+      phone: req.body.phone,
+      companyName: req.body.companyName,
+      companyLocation: req.body.companyLocation,
+      companyDescription: req.body.companyDescription,
+    };
+    const options = { new: true };
+    const updatedSeller = await Seller.findOneAndUpdate(
+      filter,
+      update,
+      options
+    );
+    res.status(201).send(updatedSeller);
+  } catch (err) {
+    console.error(err);
+  }
+};
+
 exports.getSellerByEmail = async (req, res) => {
   try {
     connectDB();
