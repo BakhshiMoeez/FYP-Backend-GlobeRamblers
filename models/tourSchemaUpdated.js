@@ -1,6 +1,12 @@
 const mongoose = require("mongoose");
 
 const tourSchemaUpdated = new mongoose.Schema({
+  destination: {
+    type: String,
+  },
+  source: {
+    type: String,
+  },
   email: {
     type: String,
   },
@@ -53,7 +59,7 @@ const tourSchemaUpdated = new mongoose.Schema({
     type: String,
     //required: true,
   },
-  bronzeAdditionalInfo: {
+  bronzeAddInfo: {
     type: String,
     //required: true,
   },
@@ -88,7 +94,7 @@ const tourSchemaUpdated = new mongoose.Schema({
     type: String,
     //required: true
   },
-  silverAdditionalInfo: {
+  silverAddInfo: {
     type: String,
     //required: true
   },
@@ -123,10 +129,10 @@ const tourSchemaUpdated = new mongoose.Schema({
     type: String,
     //required: true
   },
-  goldAdditionalInfo: {
+  goldAddInfo: {
     type: String,
     //required: true
   },
 });
 
-module.exports = mongoose.model("postTourUpdated", tourSchemaUpdated);
+module.exports = mongoose.model("postTourUpdated2", tourSchemaUpdated);

@@ -41,7 +41,7 @@ exports.addNewTour = async (req, res) => {
       bronzeMealPrice: req.body.bronzeMealPrice,
       bronzeCarDesc: req.body.bronzeCarDesc,
       bronzeCarPrice: req.body.bronzeCarPrice,
-      bronzeAddtionalInfo: req.body.bronzeAddtionalInfo,
+      bronzeAddtInfo: req.body.bronzeAddtionalInfo,
       silverPhotographyDesc: req.body.silverPhotographyDesc,
       silverPhotographyPrice: req.body.silverPhotographyPrice,
       silverHotelDesc: req.body.silverHotelDesc,
@@ -50,7 +50,7 @@ exports.addNewTour = async (req, res) => {
       silverMealPrice: req.body.silverMealPrice,
       silverCarDesc: req.body.silverCarDesc,
       silverCarPrice: req.body.silverCarPrice,
-      silverAddtionalInfo: req.body.silverAddtionalInfo,
+      silverAddInfo: req.body.silverAddtionalInfo,
       goldPhotographyDesc: req.body.goldPhotographyDesc,
       goldPhotographyPrice: req.body.goldPhotographyPrice,
       goldHotelDesc: req.body.goldHotelDesc,
@@ -59,7 +59,7 @@ exports.addNewTour = async (req, res) => {
       goldMealPrice: req.body.goldMealPrice,
       goldCarDesc: req.body.goldCarDesc,
       goldCarPrice: req.body.goldCarPrice,
-      goldAddtionalInfo: req.body.goldAddtionalInfo,
+      goldAddInfo: req.body.goldAddtionalInfo,
     });
     await tour.save();
     res.status(201).json({
