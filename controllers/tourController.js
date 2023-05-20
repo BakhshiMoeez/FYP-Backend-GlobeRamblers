@@ -1,5 +1,6 @@
 const connectDB = require("../helperFiles/DBconnection");
 const Tour = require("../models/tourSchemaUpdated");
+const Seller = require("../models/sellerSchema");
 const { ObjectId } = require("mongodb");
 
 exports.getAllTours = async (req, res) => {

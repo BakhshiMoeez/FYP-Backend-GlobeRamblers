@@ -34,6 +34,7 @@ exports.getSellerByEmail = async (req, res) => {
   try {
     connectDB();
     const seller = await Seller.findOne({ email: req.body.email }).exec();
+    console.log(req.body.email);
     console.log(seller);
     res.status(200).json(seller);
   } catch (err) {
