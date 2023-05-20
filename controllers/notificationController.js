@@ -33,10 +33,11 @@ exports.createNotification = async (req, res) => {
 
     const notification = new Notification({
       title: title,
-      description: description,
+      desc: description,
     });
 
     const result = await notification.save();
+    console.log(result);
     res.status(201).send("Notification created successfully");
   } catch (err) {
     console.log(err.message);

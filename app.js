@@ -22,7 +22,8 @@ app.use(express.json());
 app.use("/api/seller", sellerRoutes);
 app.use("/api/buyer", buyerRoutes);
 app.use("/api/tour", tourRoutes);
-app.use("api/notification", notificationRoutes);
+app.use("/api/notification", notificationRoutes);
+
 // CODE TO DELETE ENTRIES FROM TABLE
 // deletee();
 // async function deletee() {
