@@ -4,6 +4,7 @@ const bodyparser = require("body-parser");
 const sellerRoutes = require("./routes/sellerRoutes");
 const buyerRoutes = require("./routes/buyerRoutes");
 const tourRoutes = require("./routes/tourRoutes");
+const notificationRoutes = require("./routes/notificationRoutes");
 const Buyer = require("./models/buyerSchema");
 const connectDB = require("./helperFiles/DBconnection");
 const tourSchemaUpdated = require("./models/tourSchemaUpdated");
@@ -21,7 +22,7 @@ app.use(express.json());
 app.use("/api/seller", sellerRoutes);
 app.use("/api/buyer", buyerRoutes);
 app.use("/api/tour", tourRoutes);
-
+app.use("api/notification", notificationRoutes);
 // CODE TO DELETE ENTRIES FROM TABLE
 // deletee();
 // async function deletee() {
