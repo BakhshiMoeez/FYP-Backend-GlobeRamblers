@@ -2,6 +2,7 @@
 const bcrypt = require("bcrypt");
 const connectDB = require("../helperFiles/DBconnection");
 const Seller = require("../models/sellerSchema");
+const Rating = require("../models/ratingSchema");
 
 const defaultImage =
   "https://res.cloudinary.com/dij2y1ngq/image/upload/v1680706018/api_images/avatar_w7tmvt.jpg";
@@ -91,6 +92,12 @@ exports.SignUp = async (req, res) => {
         companyLocation: req.body.companyLocation,
         companyDescription: req.body.companayDescription,
       });
+
+      const rating = new Rating({
+        sellerEmail: req.body.email,
+        overallRatings: "5",
+      });
+      const savedRating = await rating.save();
 
       const savedBuyer = await buyer.save();
       res.status(200).json(savedBuyer);

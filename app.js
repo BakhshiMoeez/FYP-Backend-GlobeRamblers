@@ -9,6 +9,7 @@ const Buyer = require("./models/buyerSchema");
 const connectDB = require("./helperFiles/DBconnection");
 const tourSchemaUpdated = require("./models/tourSchemaUpdated");
 const paymentRoutes = require("./routes/paymentRoutes");
+const ratingRoutes = require("./routes/ratingRoutes");
 const app = express();
 
 // cross origin resource sharing
@@ -25,6 +26,7 @@ app.use("/api/buyer", buyerRoutes);
 app.use("/api/tour", tourRoutes);
 app.use("/api/notification", notificationRoutes);
 app.use("/api/paymentForm", paymentRoutes);
+app.use("/api/rating", ratingRoutes);
 
 // CODE TO DELETE ENTRIES FROM TABLE
 // deletee();

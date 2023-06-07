@@ -5,8 +5,7 @@ const Buyer = require("../models/buyerSchema");
 const nodemailer = require("nodemailer");
 const sgTransport = require("nodemailer-sendgrid-transport");
 const pug = require("pug");
-const dotenv = require("dotenv");
-dotenv.config({ path: "./config.env" });
+require("dotenv").config();
 
 // exports.getPaymentDetails = async (req, res) => {
 //   try {
@@ -19,12 +18,12 @@ dotenv.config({ path: "./config.env" });
 // };
 
 // SendGrid
-// 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
+// "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",
 
 const transporter = nodemailer.createTransport(
   sgTransport({
     auth: {
-      api_key: process.env.SENDGRID_SECRET_KEY,
+      api_key: process.env.SENDGRID_API_KEY,
     },
   })
 );
