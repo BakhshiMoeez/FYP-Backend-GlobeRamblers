@@ -20,7 +20,8 @@
     "nodemailer": "^6.9.2",
     "nodemailer-sendgrid-transport": "^0.2.0",
     "pug": "^3.0.2",
-    "sendgrid": "^5.2.3"
+    "sendgrid": "^5.2.3",
+    "stripe": "^12.9.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.21"

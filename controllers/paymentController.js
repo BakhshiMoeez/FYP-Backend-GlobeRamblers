@@ -33,11 +33,6 @@ exports.postPaymentDetails = async (req, res) => {
     connectDB();
     // const paymentDetails = await paymentRecords.create(req.body);
     const paymentCardData = {
-      cardNumber: req.body.cardNumber,
-      cardHolder: req.body.cardHolder,
-      expirationMonth: req.body.expirationMonth,
-      expirationYear: req.body.expirationYear,
-      cvv: req.body.cvv,
       amount: req.body.amount,
       date: req.body.date,
       sellerEmail: req.body.sellerEmail,
@@ -71,9 +66,7 @@ exports.postPaymentDetails = async (req, res) => {
       userName: paymentRecord.buyerName,
       notiName: paymentRecord.tourName,
       description1:
-        "Congratulations! Your payment has been successfully processed against your card " +
-        paymentCardData.cardNumber +
-        " for the ",
+        "Congratulations! Your payment has been successfully processed against your card for the",
       description2:
         " tour. Your travel agent is " +
         paymentRecord.sellerName +
