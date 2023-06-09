@@ -91,14 +91,14 @@ exports.postPaymentDetails = async (req, res) => {
 
     transporter.sendMail({
       to: paymentCardData.buyerEmail,
-      from: "abdullahsheikh207@gmail.com",
+      from: "moeezbakhshi123456@gmail.com",
       subject: "Payment Successful",
       html: htmlForBuyer,
     });
 
     transporter.sendMail({
       to: paymentCardData.sellerEmail,
-      from: "abdullahsheikh207@gmail.com",
+      from: "moeezbakhshi123456@gmail.com",
       subject: "Tour Booked",
       html: htmlForSeller,
     });
