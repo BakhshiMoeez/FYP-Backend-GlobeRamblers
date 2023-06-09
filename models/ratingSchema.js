@@ -5,6 +5,7 @@ const buyerSchema = new mongoose.Schema({
   overallRatings: {
     type: String,
   },
+  fullName: String,
 });
 
 module.exports = mongoose.model("Ratings", buyerSchema);

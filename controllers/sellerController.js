@@ -96,6 +96,7 @@ exports.SignUp = async (req, res) => {
       const rating = new Rating({
         sellerEmail: req.body.email,
         overallRatings: "5",
+        fullName: req.body.fname + " " + req.body.lname,
       });
       const savedRating = await rating.save();
 
