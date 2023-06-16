@@ -7,7 +7,7 @@ exports.getAllTours = async (req, res) => {
   try {
     connectDB();
     const tour = await Tour.find();
-    console.log(tour);
+    // console.log(tour);
     res.status(200).send(tour);
   } catch (err) {
     console.log(err.message);

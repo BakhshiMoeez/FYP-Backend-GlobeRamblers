@@ -20,7 +20,7 @@ exports.updateProfileInfo = async (req, res) => {
 
     const updatedBuyer = await Buyer.findOneAndUpdate(filter, update, options);
 
-    console.log(updatedBuyer);
+    console.log("UpdatedBuyer", updatedBuyer);
 
     res.status(201).send(updatedBuyer);
   } catch (err) {

@@ -2,6 +2,18 @@ const Ratings = require("../models/ratingSchema");
 const connectDB = require("../helperFiles/DBconnection");
 const { ObjectId } = require("mongodb");
 
+exports.getTopRatedSellers = async (req, res) => {
+  try {
+    connectDB();
+    console.log("Hello from get top rated sellers");
+    const ratings = await Ratings.find();
+    console.log("Rating total info: ", ratings);
+    res.status(200).send(ratings);
+  } catch (err) {
+    console.log("error from get top seller:", err.message);
+  }
+};
+
 exports.setRatingOfSeller = async (req, res) => {
   try {
     connectDB();
@@ -60,7 +72,7 @@ exports.setRatingOfSeller = async (req, res) => {
       res.status(201).send(newRating.toString());
     }
   } catch (err) {
-    console.log(err.message);
+    console.log("error from change ratings", err.message);
   }
 };
 
@@ -72,6 +84,6 @@ exports.getRatingOfSeller = async (req, res) => {
 
     res.status(201).send(result.overallRatings);
   } catch (err) {
-    console.log(err.message);
+    console.log("error from get ratings of seller:", err.message);
   }
 };
