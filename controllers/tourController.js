@@ -34,6 +34,8 @@ exports.addNewTour = async (req, res) => {
       description: req.body.desc,
       coverImage: req.body.coverImage,
       basePrice: req.body.basePrice,
+      source: req.body.source,
+      destination: req.body.destination,
       bronzePhotographyDesc: req.body.bronzePhotographyDesc,
       bronzePhotographyPrice: req.body.bronzePhotographyPrice,
       bronzeHotelDesc: req.body.bronzeHotelDesc,
