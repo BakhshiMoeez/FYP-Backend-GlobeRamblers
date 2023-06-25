@@ -12,6 +12,7 @@ const paymentRoutes = require("./routes/paymentRoutes");
 const ratingRoutes = require("./routes/ratingRoutes");
 const adminRoutes = require("./routes/adminPanelRoutes");
 const tourUpdateDelete = require("./routes/tourUpdateDelete");
+const sellerStatusRoutes = require("./routes/sellerStatusRoutes");
 const app = express();
 
 // cross origin resource sharing
@@ -31,6 +32,7 @@ app.use("/api/paymentForm", paymentRoutes);
 app.use("/api/rating", ratingRoutes);
 app.use("/api/admin", adminRoutes);
 app.use("/api/tourupdatedelete", tourUpdateDelete);
+app.use("/api/sellerStatus", sellerStatusRoutes);
 
 // CODE TO DELETE ENTRIES FROM TABLE
 // deletee();

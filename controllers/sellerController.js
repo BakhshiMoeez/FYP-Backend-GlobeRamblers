@@ -3,6 +3,7 @@ const bcrypt = require("bcrypt");
 const connectDB = require("../helperFiles/DBconnection");
 const Seller = require("../models/sellerSchema");
 const Rating = require("../models/ratingSchema");
+const SellerStatus = require("../models/approvalSchema");
 
 const defaultImage =
   "https://res.cloudinary.com/dij2y1ngq/image/upload/v1680706018/api_images/avatar_w7tmvt.jpg";
@@ -95,12 +96,28 @@ exports.SignUp = async (req, res) => {
 
       const rating = new Rating({
         sellerEmail: req.body.email,
-        overallRatings: "5",
+        overallRatings: "0",
         fullName: req.body.fname + " " + req.body.lname,
       });
-      const savedRating = await rating.save();
 
+      const sellerStatus = new SellerStatus({
+        status: "pending",
+        email: req.body.email,
+        password: hashedPass,
+        fullName: req.body.fname + " " + req.body.lname,
+        profilePic: profileUrl,
+        phone: req.body.phone,
+        address: req.body.address,
+        creditCard: req.body.creditCardNumber,
+        companyName: req.body.companyName,
+        companyLocation: req.body.companyLocation,
+        companyDescription: req.body.companayDescription,
+      });
+
+      const savedSellerStatus = await sellerStatus.save();
+      const savedRating = await rating.save();
       const savedBuyer = await buyer.save();
+
       res.status(200).json(savedBuyer);
     }
   } catch (err) {
