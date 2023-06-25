@@ -6,7 +6,7 @@ const SellerStatus = require("../models/approvalSchema");
 exports.getAllSellerStatus = async (req, res) => {
   try {
     connectDB();
-    const sellerStatus = await SellerStatus.find({ status: "approved" });
+    const sellerStatus = await SellerStatus.find({ status: "pending" });
     res.status(200).send(sellerStatus);
   } catch (err) {
     console.log(err);
